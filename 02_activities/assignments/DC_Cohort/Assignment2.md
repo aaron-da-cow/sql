@@ -55,6 +55,35 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 
 ```
 Your answer...
+
+Type 1:
+CREATE TABLE CUSTOMER_ADDRESS (
+    customer_id INT PRIMARY KEY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    email VARCHAR(100),
+    address_street VARCHAR(255),
+    address_city VARCHAR(100),
+    address_state VARCHAR(50),
+    address_zip VARCHAR(20)
+);
+
+Type 2:
+
+CREATE TABLE CUSTOMER_ADDRESS (
+    address_id INT PRIMARY KEY,
+    customer_id INT, -- Foreign Key to customer
+    address_street VARCHAR(255),
+    address_city VARCHAR(100),
+    address_state VARCHAR(50),
+    address_zip VARCHAR(20),
+    is_active BOOLEAN, -- 1 for current, 0 for old
+    effective_start_date DATE, -- When this address became active
+    effective_end_date DATE -- When this address became inactive
+);
+
+
+
 ```
 
 ***
@@ -184,4 +213,12 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 ```
 Your thoughts...
+
+There are many interesting points brought up in this story. 
+Of course, the article alludes to the problem that we have with fast fashion, but more broadly the idea that all of the disposable consumption that we partake in had to be done by cheap labour. For example, a cheap H&M shirt had to be done by hand and not mass produced by a robot. 
+Now we get into the problem about artificial intelligence. Despite what we may think about AI thinking in the same manner that we think, it was aligned and processed by humans before being able to be trained. Several ethical questions comes out of this. First of all, as a graduate student, the question of whether or not having graduate students do cheap or free labour, since it may be related to a field that they are pursuing is ethical? But the question starts hitting harder when you think about Amazon’s Mechanical Turk. If there are tens of thousands of workers working for less than minimum wage in order to train an artificial intelligence program, the question then goes in the same direction with hiring extremely cheap workers to sew a shirt that robots cannot do. And is this exploitative?
+Also coming out of this becomes an issue of quality. The article brings up how humans would find the easiest way to complete the task – so a filter would be to have the humans prove their concentration, intelligence and commitment by testing the humans with known images to get them to prove their integrity. And only then, would the human be permitted to tag photos in order to train the artificial intelligence model. 
+We now get into ethical considerations. When we talk about classification, there are human biases, and often these biases can be quite ugly. Like calling a person who wears glasses a “dweeb”. This reminds me of an article I read years back about an AI character that people could interact with becoming an incredibly racist and hostile entity after enough interactions with the internet. In many ways, artificial intelligence is a reflection of the human condition – the good, the bad and the ugly. But it is really hard to find the line separating the good from the bad – after all, the divisions in humanity across the world can be attributed to where people draw lines as to what is acceptable and unacceptable. 
+This article highlights so many interesting and yet problematic questions that arise from the fact that artificial intelligence learns from material curated by humans. 
+
 ```
